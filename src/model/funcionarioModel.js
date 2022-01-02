@@ -65,6 +65,10 @@ const funcionarioSchema = new mongoose.Schema({
   tipoPcd :{
     type:String,
     require : true
+  },
+  status : {
+    type: Boolean,
+    require : true
   }
 
 })

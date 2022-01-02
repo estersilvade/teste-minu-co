@@ -6,6 +6,8 @@ const cors = require('cors')
 
 const dataBase = require('./database/configMong')
 
+const funcionariosRouter = require('./routes/fruncionariosRoutes')
+
 const app = express()
 
 dataBase.connect()
@@ -14,10 +16,7 @@ app.use(cors())
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-  res.status(200).json({
-    mensagem: 'tudo ok por aqui'
-  })
-})
+//rota teste 
+app.use('/',funcionariosRouter)
 
 module.exports = app
