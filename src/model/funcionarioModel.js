@@ -15,12 +15,8 @@ const funcionarioSchema = new mongoose.Schema({
     unique: true,
     require: true
   },
-  password: {
-    type: String,
-    require: true
-  },
   dataDeNacimento : {
-    type :Number,
+    type :String,
     require : true
   },
   genero: {
@@ -31,7 +27,7 @@ const funcionarioSchema = new mongoose.Schema({
     type: String,
     require : true
   },
-  Dependente : {
+  dependente : {
     type: Boolean,
     require : true
   },
@@ -44,7 +40,7 @@ const funcionarioSchema = new mongoose.Schema({
     require : true
   },
   endereco : {
-    type: Number,
+    type: String,
     require : true
   },
   bairro : {
@@ -69,6 +65,10 @@ const funcionarioSchema = new mongoose.Schema({
   status : {
     type: Boolean,
     require : true
+  },
+  password: {
+    type: String,
+    require: true
   }
 
 })

@@ -16,6 +16,8 @@ app.use(cors())
 
 app.use(express.json())
 
+
+
 //rota teste 
 app.use('/',funcionariosRouter)
 

@@ -17,4 +17,9 @@ router.get('/', (req, res) => res.status(200).json({
 //@access public
 router.get('/funionarios',funionariosController.getAll)
 
+//@ route post /registro
+//@deccadastro de funcionarios 
+//@access public
+router.post('/registro',funionariosController.rgDeFuncionarios)
+
 module.exports = router
