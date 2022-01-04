@@ -47,7 +47,7 @@ const funcionarioSchema = new mongoose.Schema({
     type:String,
     require : true
   },
-  numeroDaRecidencia : {
+  numeroDaResidencia : {
     type:Number,
     require : true
   },

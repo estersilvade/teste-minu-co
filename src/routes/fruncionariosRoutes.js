@@ -22,4 +22,19 @@ router.get('/funionarios',funionariosController.getAll)
 //@access public
 router.post('/registro',funionariosController.rgDeFuncionarios)
 
+//@ route post /login
+//@deccadastro de logar funcionarios 
+//@access public
+router.post('/login',funionariosController.loginFuncionarios)
+
+//@ route delete /delete
+//@deccadastro de deletar funcionarios 
+//@access public
+router.delete('/delete/:id' ,funionariosController. deletFuncionarios)
+
+//@ route Atualizar/Atualizar
+//@deccadastro de deletar funcionarios 
+//@access public
+router.put('/Atualizar',funionariosController.updateFuncionarios)
+
 module.exports = router
