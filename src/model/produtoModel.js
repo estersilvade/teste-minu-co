@@ -14,16 +14,16 @@ const  controleDeEstoque = new mongoose.Schema({
     type: Number,
     require : true
   },
-  numerDaNota:{
+  valorDaNota:{
+    type: Number,
+    require : true
+  },
+  numeroDaNota:{
     type: Number,
     require : true
   },
   nomeDofornecedor:{
     type: String,
-    require : true
-  },
-  valorDaNota:{
-    type: Number,
     require : true
   },
   cnpjFornecedor:{
@@ -35,6 +35,6 @@ const  controleDeEstoque = new mongoose.Schema({
 { timestamps: true }
 )
 
-const produto =mongoose.model('Produto',controleDeEstoque )
+const Produto = mongoose.model('produto',controleDeEstoque )
 
-module.exports = produto
+module.exports = Produto

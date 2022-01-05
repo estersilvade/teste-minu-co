@@ -6,9 +6,9 @@ const cors = require('cors')
 
 const dataBase = require('./database/configMong')
 
-const funcionariosRouter = require('./routes/fruncionariosRoutes')
-
-const produtoRoutes = require('./routes/produtoRoutes')
+const funcionariosRouter = require('./routes/funcionariosRoutes')
+ 
+const produtoRouter = require('./routes/produtoRoutes')
 
 const app = express()
 
@@ -20,10 +20,13 @@ app.use(express.json())
 
 
 
+
+
 //rota teste 
 app.use('/',funcionariosRouter)
 
-//rota teste Produto
-app.use('//',produtoRoutes)
+app.use('/produto',produtoRouter)
+
+
 
 module.exports = app

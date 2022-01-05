@@ -1,23 +1,25 @@
 const Produto = require('../model/produtoModel')
 
 
-//cadastro de produto model
-const cadastroDeProduto = async(req, res) =>{
-  const {nomeDoProduto, quantidade,valorProdutoUnidade,valorDaNota,numerDaNota, nomeDofornecedor,cnpjFornecedor} = req.body
+//cadastro de produto 
+const cadastroDeProduto = async(req, res) => {
+  const { nomeDoProduto, quantidade,valorProdutoUnidade,valorDaNota,numeroDaNota, nomeDofornecedor,cnpjFornecedor}= req.body
   try{
     const newProduto = new Produto({
       nomeDoProduto,
       quantidade,
       valorProdutoUnidade,
       valorDaNota,
-      numerDaNota,
+      numeroDaNota,
       nomeDofornecedor,
       cnpjFornecedor
     })
-    const saveProduto =await newProduto.save()
+   
+    const saveProduto = await newProduto.save()
     res.status(200).json({
       message : "Produto Salvo  com sucesso ", saveProduto
-    })
+    }) 
+    console.log(saveProduto )
 
   }catch(error){
     res.status(500).json({
@@ -25,6 +27,9 @@ const cadastroDeProduto = async(req, res) =>{
     })
   }
 }
+
+//lista
+
 const editList = async (req, res) =>{
 
   try{
@@ -53,7 +58,8 @@ const editList = async (req, res) =>{
 
 }
 
-module.exports ={
+//delet
+module.exports = {
   cadastroDeProduto,
   editList
 }

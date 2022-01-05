@@ -24,7 +24,7 @@ const getAll = async (req, res) =>{
 }
 
 const rgDeFuncionarios = async (req, res) =>{
-   const {nomeFuncionario, cargo, email, dataDeNacimento, genero, estadoCivil, dependente,quantidadeDeDependentes, telefone, endereco, bairro, numeroDaResidencia,coplemeto, pcd, tipoPcd, status ,password } = req.body
+   const {nomeFuncionario, cargo, email, dataDeNacimento, genero, estadoCivil, dependente,quantidadeDeDependentes, telefone, endereco, bairro, numeroDaResidencia, pcd, tipoPcd, status ,password } = req.body
    try{
      const newFuncion = new Funcinarios ({
       nomeFuncionario,
@@ -38,8 +38,7 @@ const rgDeFuncionarios = async (req, res) =>{
       telefone, 
       endereco, 
       bairro, 
-      numeroDaResidencia,
-      coplemento, 
+      numeroDaResidencia, 
       pcd, 
       tipoPcd, 
       status,

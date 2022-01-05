@@ -2,7 +2,12 @@ const express = require('express')
 
 const router = express.Router()
 
-const funionariosController = require('../controllers/funcionariosControllers')
+const funcionariosController = require('../controllers/funcionariosControllers')
+
+const {privateRouter} = require('../helper/auth')
+
+
+
 
 //@ router Get' /' Apresentação 
 //@dec Rota de teste com apresentação 
@@ -15,26 +20,26 @@ router.get('/', (req, res) => res.status(200).json({
 //@ route Get /funionarios
 //@dec Lista de funionarios ativos 
 //@access public
-router.get('/funionarios',funionariosController.getAll)
+router.get('/funcionarios',funcionariosController.getAll)
 
 //@ route post /registro
 //@deccadastro de funcionarios 
 //@access public
-router.post('/registro',funionariosController.rgDeFuncionarios)
+router.post('/registro',funcionariosController.rgDeFuncionarios)
 
 //@ route post /login
 //@deccadastro de logar funcionarios 
 //@access public
-router.post('/login',funionariosController.loginFuncionarios)
+router.post('/login',funcionariosController.loginFuncionarios)
 
 //@ route delete /delete
 //@deccadastro de deletar funcionarios 
 //@access public
-router.delete('/delete/:id' ,funionariosController. deletFuncionarios)
+router.delete('/delete/:id' ,funcionariosController. deletFuncionarios)
 
 //@ route Atualizar/Atualizar
 //@deccadastro de deletar funcionarios 
 //@access public
-router.put('/Atualizar/:id',funionariosController.updateFuncionarios)
+router.put('/Atualizar/:id',funcionariosController.updateFuncionarios)
 
 module.exports = router

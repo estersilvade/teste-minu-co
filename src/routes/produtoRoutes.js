@@ -1,20 +1,28 @@
 const express = require('express')
 
-
 const router = express.Router()
 
 const produtoController = require('../controllers/ProdutoController')
 
+const {privateRouter} = require('../helper/auth')
 
-//@ router Get' //produto' Apresentação 
-//@dec Rota de teste com apresentação 
-//@acc public
+router.use(privateRouter)
 
-router.post('//produto', produtoController.cadastroDeProduto)
 
-//@ router Get' //' Apresentação 
-//@dec Rota de teste com apresentação 
-//@acc public
-router.put('//atualizar' , produtoController.editList)
+//@rout get '//'teste 
+//@dec Rota de teste com apresentação com
+//@acc privada 
+router.get('/',  (req, res) => {
+  res.status(200).json({
+    message: "Produtos "
+  })
+})
+
+router.post('/entrada',produtoController.cadastroDeProduto)
+
+router.put('/update/:id',produtoController.cadastroDeProduto)
+
+
+
 
 module.exports = router

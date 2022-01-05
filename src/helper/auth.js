@@ -16,3 +16,6 @@ exports.hashPassWord = async (password, res) => {
 
   }
 }
+exports.privateRouter = async(req, res, next) => {
+  next()
+}
