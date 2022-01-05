@@ -35,6 +35,6 @@ router.delete('/delete/:id' ,funionariosController. deletFuncionarios)
 //@ route Atualizar/Atualizar
 //@deccadastro de deletar funcionarios 
 //@access public
-router.put('/Atualizar',funionariosController.updateFuncionarios)
+router.put('/Atualizar/:id',funionariosController.updateFuncionarios)
 
 module.exports = router

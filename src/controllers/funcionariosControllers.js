@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const getAll = async (req, res) =>{
+  
 
   try{
     const funcinario = await Funcinarios.find({
