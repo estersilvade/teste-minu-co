@@ -4,31 +4,35 @@ const  controleDeEstoque = new mongoose.Schema({
   id: mongoose.Schema.Types.ObjectId,
   nomeDoProduto : {
     type: String,
-    require : true
+    required : true
   },
   quantidade : {
     type: Number,
-    require : true
+    required : true
   },
   valorProdutoUnidade  : {
     type: Number,
-    require : true
+    required : true
   },
   valorDaNota:{
     type: Number,
-    require : true
+    required : true
   },
   numeroDaNota:{
     type: Number,
-    require : true
+    required : true
   },
   nomeDofornecedor:{
     type: String,
-    require : true
+    required : true
   },
   cnpjFornecedor:{
     type: Number,
-    require : true
+    required : true
+  },
+  produtoEmEstoque: {
+    type: Boolean,
+    required : true
   }
   
 },

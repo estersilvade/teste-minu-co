@@ -4,71 +4,77 @@ const funcionarioSchema = new mongoose.Schema({
   id: mongoose.Schema.Types.ObjectId,
   nomeFuncionario : {
     type: String,
-    require : true
+    required : true
+  },
+  roles:{
+    type: String,
+    required : true,
+    default : "user"
   },
   cargo : {
     type: String,
-    require : true
+    required : true
+
   }, 
   email: {
     type: String,
     unique: true,
-    require: true
+    required: true
   },
   dataDeNacimento : {
     type :String,
-    require : true
+    required : true
   },
   genero: {
     type: String,
-    require : true
+    required : true
   },
   estadoCivil : {
     type: String,
-    require : true
+    required : true
   },
   dependente : {
     type: Boolean,
-    require : true
+    required : true
   },
   quantidadeDeDependentes : {
     type: Number,
-    require : true
+    required : true
   },
   telefone : {
     type: Number,
-    require : true
+    required : true
   },
   endereco : {
     type: String,
-    require : true
+    required : true
   },
   bairro : {
     type:String,
-    require : true
+    required : true
   },
   numeroDaResidencia : {
     type:Number,
-    require : true
+    required : true
   },
   coplemeto : {
     type:String
   },
   pcd : {
     type:Boolean,
-    require : true
+    required : true
   },
   tipoPcd :{
     type:String,
-    require : true
+    required : true
   },
   status : {
     type: Boolean,
-    require : true
+    required : true
   },
   password: {
     type: String,
-    require: true
+    required: true
   }
 
 })

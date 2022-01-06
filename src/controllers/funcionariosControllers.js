@@ -24,10 +24,11 @@ const getAll = async (req, res) =>{
 }
 
 const rgDeFuncionarios = async (req, res) =>{
-   const {nomeFuncionario, cargo, email, dataDeNacimento, genero, estadoCivil, dependente,quantidadeDeDependentes, telefone, endereco, bairro, numeroDaResidencia, pcd, tipoPcd, status ,password } = req.body
+   const {nomeFuncionario, roles, cargo, email, dataDeNacimento, genero, estadoCivil, dependente,quantidadeDeDependentes, telefone, endereco, bairro, numeroDaResidencia, pcd, tipoPcd, status ,password,complemento } = req.body
    try{
      const newFuncion = new Funcinarios ({
       nomeFuncionario,
+      roles,
       cargo, 
       email, 
       dataDeNacimento, 
@@ -37,7 +38,8 @@ const rgDeFuncionarios = async (req, res) =>{
       quantidadeDeDependentes, 
       telefone, 
       endereco, 
-      bairro, 
+      bairro,
+      complemento, 
       numeroDaResidencia, 
       pcd, 
       tipoPcd, 
@@ -73,7 +75,7 @@ const loginFuncionarios = async (req, res) =>{
       return res.status(422).json({message :"Senha incorreta!"})
   }
     const secret = process.env.JWT_SECRET
-    const token = jwt.sign({id: funcionarios._id},secret)
+    const token = jwt.sign({id: funcionarios._id,roles:funcionarios.roles},secret)
       return res.status(200).json({
         message:"Usuario Logado ",
         token
@@ -103,29 +105,20 @@ const deletFuncionarios = async (req, res) => {
 
 const updateFuncionarios = async (req, res) => {
 
-  const authHeader = req.get("authorization")
-
-  const token = authHeader.split(" ")[1]
-
-  const decoded = jwt.verify(token, process.env.SECRET)
-
-  const idFuncionarios = decoded.id.valueOf()
-
   try {
-    const alterarDados = await Funcinarios.findById(idFuncionarios)
-    const {nomeFuncionario, cargo, email, genero, estadoCivil,quantidadeDeDependentes, telefone, endereco, bairro, numeroDaResidencia,coplemento, status ,password} = req.body
+    const alterarDados = await Funcinarios.findById(req.params.id)
+    const {nomeFuncionario, cargo, email, genero, estadoCivil,quantidadeDeDependentes, telefone, endereco, bairro, numeroDaResidencia,complemento, status ,password} = req.body
     alterarDados.nomeFuncionario = nomeFuncionario||alterarDados.nomeFuncionario 
     alterarDados.cargo= cargo|| alterarDados.cargo
     alterarDados.email= email|| alterarDados.email
     alterarDados.genero= genero|| alterarDados.genero
     alterarDados.estadoCivil= estadoCivil|| alterarDados.estadoCivil
-    alterarDados.dependente= dependente|| alterarDados.dependente
     alterarDados.quantidadeDeDependentes = quantidadeDeDependentes|| alterarDados.quantidadeDeDependentes
     alterarDados.telefone=telefone||alterarDados.telefone
     alterarDados.endereco= endereco|| alterarDados.endereco
     alterarDados.bairro= bairro|| alterarDados.bairro
     alterarDados.numeroDaResidencia = numeroDaResidencia|| alterarDados.numeroDaResidencia
-    alterarDados.coplemento= coplemento|| alterarDados.coplemento
+    alterarDados.complemento= complemento|| alterarDados.complemento
     alterarDados.status = status|| alterarDados.status
     alterarDados.password = password|| alterarDados.password
 
@@ -134,12 +127,14 @@ const updateFuncionarios = async (req, res) => {
       message: "Dados  Atualizado com sucesso", dadosAlterados
     })
   }catch (error) {
-    console.log(error)
+    
     res.status(500).json({
-      mensagem: error.mensage
+      message: error.message
 
     })
 }}
+
+
 
 module.exports = {
   getAll,

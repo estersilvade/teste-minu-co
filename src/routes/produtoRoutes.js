@@ -22,6 +22,10 @@ router.post('/entrada',produtoController.cadastroDeProduto)
 
 router.put('/update/:id',produtoController.cadastroDeProduto)
 
+router.get('/listade' , produtoController.listadeProdutos )
+
+router.delete('/excluir/:id',produtoController.excluir)
+
 
 
 
