@@ -67,7 +67,7 @@ const editList = async (req, res) =>{
   }catch (error) {
     console.log(error)
     res.status(500).json({
-      mensagem: error.mensage
+      message: error.message 
 
     })
   }
