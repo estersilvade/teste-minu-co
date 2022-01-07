@@ -11,7 +11,7 @@
 
 Esse projeto foi desenvolvido para o processo seletivo da _Minu.co_.
 
-O objetivo è de manter e
+O objetivo è  manter e
 evoluir o software de controle de estoque de produtos.
 
 
