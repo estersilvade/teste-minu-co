@@ -20,7 +20,7 @@ exports.hashPassWord = async (password, res) => {
 exports.privateRouter = async(req, res, next) => {
  const authHeader = req.get("authorization")
 
-  if(!authHeader) return res.status(401).json({message:"Não altorizadao "})
+  if(!authHeader) return res.status(401).json({message:"Não autorizado "})
  
   const token = authHeader.split(" ")[1]
    try{
