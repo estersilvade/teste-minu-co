@@ -1,4 +1,4 @@
-# teste-minu-com
+# teste-minu-co
 
 
 ##### Disponível em: [GitHub](https://github.com/estersilvade/teste-minu-com)
