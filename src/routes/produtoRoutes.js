@@ -18,10 +18,10 @@ router.get('/',  (req, res) => {
   })
 })
 
-//@ router Get'/listade' Apresentação 
+//@ router Get'/lista' Apresentação 
 //@dec Rota tras a lista de produtos cadastrados 
 //@acc public
-router.get('/listade' , produtoController.listadeProdutos )
+router.get('/lista' , produtoController.listadeProdutos )
 
 //@ router Get'/entrada' cadastro 
 //@dec Rota cadastrar produtos  
@@ -30,7 +30,7 @@ router.post('/entrada',produtoController.cadastroDeProduto)
 
 //@ router Get'/update/:id' alterar dados 
 //@dec Rota permite entrada de dados para atualizar 
-//@accprivada
+//@acc privada
 router.put('/update/:id',produtoController.cadastroDeProduto)
 
 
