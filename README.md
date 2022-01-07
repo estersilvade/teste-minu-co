@@ -5,7 +5,7 @@
 
 ##### Foi desenvolvido por [Ester Silva](https://www.linkedin.com/in/ester-silvade/)
 
-##### Apresentação no postman [Postman](https://winter-firefly-643215.postman.co/documentation/17759887-1b762418-1612-4a4f-ba42-11efad128d49/publish?workspaceId=e1c4dd93-87fd-4783-8649-6e81c53959a3)
+##### Apresentação no postman [Postman](https://documenter.getpostman.com/view/17759887/UVXdQeXR)
 
 <br><br>
 
